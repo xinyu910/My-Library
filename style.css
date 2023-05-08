@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap");
+/*
+font-family: 'Libre Caslon Text', serif;
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f2ebe3 !important;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 80%;
+}
+
+.container {
+  font-family: "Montserrat", sans-serif;
+  padding: 1.8rem 3rem 1.8rem 3rem;
+}
+
+/*nav bar*/
+nav.my-nav {
+  background-color: #f2ebe3;
+  color: #2c1810;
+}
+
+nav .navbar-brand img {
+  width: 10rem;
+  height: auto;
+}
+
+nav .login {
+  background-color: #daaa63;
+  color: #2c1810;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.3rem;
+  align-items: center;
+  padding: 0.6rem 1.4rem 0.6rem 1.1rem;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+  height: 2.6rem;
+}
+
+nav #button-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+nav #sample {
+  position: relative;
+  background-color: #daaa63;
+  color: #2c1810;
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+  padding: 0.6rem 1.4rem 0.6rem 1.4rem;
+  font-size: 0.8rem;
+  height: 2.6rem;
+}
+
+nav .login img {
+  width: 1.4rem;
+  height: auto;
+}
+
+/*grid*/
+.books-grid {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 1rem 0 1.1rem;
+  background-color: inherit;
+  grid-template-rows: masonry;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.add-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 3rem;
+  color: #2c1810;
+  background-color: #beaf98;
+  opacity: 70%;
+}
+
+.add-grid {
+  justify-self: stretch;
+  align-self: stretch;
+  min-height: 10rem;
+  height: auto;
+}
+
+.grid-item {
+  background-color: inherit;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.grid-item .book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 11rem;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.grid-item p {
+  margin: 0;
+  overflow-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
+}
+
+.grid-item .info-title {
+  color: #2c1810;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Libre Caslon Text", serif;
+}
+
+.grid-item .info-author,
+.grid-item .info-pages {
+  color: #beaf98;
+  font-size: 0.7rem;
+}
+
+.grid-item .read-status {
+  color: #4f5949;
+  font-size: 0.7rem;
+}
+
+#status {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item .toggle-button {
+  background-color: inherit;
+  color: #daaa63;
+  border-radius: 18px;
+  border: 1.5px solid #daaa63;
+  padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+  font-size: 0.6rem;
+}
+
+.grid-item .delete-button {
+  margin-top: 0.7rem;
+  background-color: inherit;
+  color: #daaa63;
+  border-radius: 20px;
+  border: 1.5px solid #daaa63;
+  padding: 0.6rem 0.75rem 0.6rem 0.75rem;
+  font-size: 0.7rem;
+}
+
+.grid-item img {
+  width: 6.8rem;
+  height: auto;
+  box-shadow: 5px 5px 16px #666;
+}
+
+/*form*/
+.add-book-modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 28rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background-color: #e1c7a2;
+  opacity: 97%;
+  text-align: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in-out;
+  color: #2c1810;
+}
+
+.add-book-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 3px 1.5px 1.5px rgba(0, 0, 0, 0.2);
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1.3rem !important;
+}
+
+input[type="text"],
+input[type="number"] {
+  border-radius: 16px;
+  border: none;
+  padding: 0.65rem;
+  width: 100%;
+  box-shadow: inset 1.5px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay.active {
+  display: block;
+}
+
+.close-form {
+  position: absolute;
+  top: 0.2rem;
+  right: 1rem;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.submit-button {
+  background-color: #daaa63;
+  border-radius: 20px;
+  border: none;
+  padding: 0.6rem 1.4rem 0.6rem 1.4rem;
+  width: 50%;
+  color: inherit;
+}
+
+.error-message {
+  display: none;
+}
+
+.error-message.active {
+  display: block;
+  color: #cf3a08;
+}
+
+label[for="cover"] {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  width: 100%;
+  margin-left: 0.2rem;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+input::file-selector-button {
+  border: none;
+  background-color: #daaa63;
+  color: #2c1810;
+  border-radius: 16px;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 1200px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .books-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .add-button {
+    width: 70%;
+  }
+
+  .add-grid {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
