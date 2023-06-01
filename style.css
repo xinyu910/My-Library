@@ -321,4 +321,8 @@ input::file-selector-button {
     text-align: center;
     vertical-align: middle;
   }
+
+  .add-book-modal {
+    width: 20rem;
+  }
 }
